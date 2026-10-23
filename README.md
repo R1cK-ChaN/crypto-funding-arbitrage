@@ -47,14 +47,7 @@ The report is generated from illustrative values, not live quotes or a backtest.
 
 ## How the signal works
 
-```mermaid
-flowchart LR
-    A["Market data: spot, perpetual, funding"] --> B{"Funding above threshold?"}
-    B -->|Yes| C{"Perpetual minus spot above threshold?"}
-    B -->|No| D[No signal]
-    C -->|Yes| E[Signal candidate]
-    C -->|No| D
-```
+![Signal flow: read spot, perpetual, and funding data; require both thresholds to be exceeded; otherwise produce no signal.](docs/signal-flow.svg)
 
 The current detector requires both conditions to be strictly greater:
 
