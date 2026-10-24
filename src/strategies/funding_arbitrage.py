@@ -1,4 +1,3 @@
-from exchange.okx_client import OKXClient
 from utils.calculator import calculate_position_size
 from utils.logger import get_logger
 import time
@@ -6,14 +5,19 @@ import time
 logger = get_logger()
 
 class FundingArbitrage:
-    def __init__(self, config):
+    def __init__(self, config, exchange=None):
         self.config = config
-        self.exchange = OKXClient(
-            config['api_key'],
-            config['api_secret'],
-            config['passphrase'],
-            config.get('is_test', False)
-        )
+        if exchange is None:
+            # Load the HTTP dependency only when using the exchange adapter.
+            from exchange.okx_client import OKXClient
+
+            exchange = OKXClient(
+                config['api_key'],
+                config['api_secret'],
+                config['passphrase'],
+                config.get('is_test', False)
+            )
+        self.exchange = exchange
         
         # 策略参数
         self.funding_threshold = config['funding_threshold']

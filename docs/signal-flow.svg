@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="208" viewBox="0 0 1040 208" role="img" aria-labelledby="title description">
+  <title id="title">How the funding signal works</title>
+  <desc id="description">Read spot price, perpetual price, and funding rate. A signal requires funding and the perpetual-minus-spot spread to exceed their thresholds. Otherwise there is no signal.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect width="1040" height="208" rx="16" fill="#f6f8fc"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="24" y="28" width="252" height="152" rx="12" fill="#fff" stroke="#d4deed"/>
+    <text x="44" y="58" font-size="12" font-weight="700" fill="#2563eb">01 / INPUT</text>
+    <text x="44" y="88" font-size="22" font-weight="700" fill="#17243b">Market data</text>
+    <text x="44" y="117" font-size="16" fill="#46566f">Spot and perpetual prices</text>
+    <text x="44" y="143" font-size="16" fill="#46566f">Funding rate</text>
+    <path d="M 284 104 H 318" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <rect x="330" y="28" width="380" height="152" rx="12" fill="#fff" stroke="#d4deed"/>
+    <text x="350" y="58" font-size="12" font-weight="700" fill="#2563eb">02 / CHECK BOTH</text>
+    <text x="350" y="88" font-size="22" font-weight="700" fill="#17243b">Strict thresholds</text>
+    <text x="350" y="117" font-size="16" fill="#46566f">Funding rate &gt; funding threshold</text>
+    <text x="350" y="143" font-size="16" fill="#46566f">Perpetual - spot &gt; spread threshold</text>
+    <path d="M 718 104 H 752" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <rect x="764" y="28" width="252" height="152" rx="12" fill="#eff6ff" stroke="#b9cff4"/>
+    <text x="784" y="58" font-size="12" font-weight="700" fill="#2563eb">03 / OUTPUT</text>
+    <text x="784" y="88" font-size="22" font-weight="700" fill="#17243b">Signal candidate</text>
+    <text x="784" y="117" font-size="16" fill="#46566f">Both pass: YES</text>
+    <text x="784" y="143" font-size="16" fill="#46566f">Otherwise: NO</text>
+  </g>
+</svg>

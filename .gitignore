@@ -22,6 +22,7 @@ wheels/
 *.egg
 
 # Virtual Environment
+.venv/
 venv/
 ENV/
 
@@ -37,6 +38,8 @@ logs/
 
 # Config
 config/config.yaml
+.env
+.env.*
 
 # Mac
 .DS_Store

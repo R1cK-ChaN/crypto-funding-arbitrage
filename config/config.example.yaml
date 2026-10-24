@@ -1,0 +1,26 @@
+# Configuration for the existing monitor, not the offline demo.
+# Copy to config/config.yaml (ignored by Git) and keep credentials local.
+# The current adapter signs its market-data requests. Use read-only permissions
+# if exploring it; the offline demo does not use these fields at all.
+api_key: ""
+api_secret: ""
+passphrase: ""
+
+# Currently stored only: this flag does not enable sandbox routing or headers.
+is_test: false
+
+# Decimal rate per funding period: 0.0001 = 0.01%, not an annual return.
+funding_threshold: 0.0001
+
+# Absolute swap price minus spot price, in USDT per unit (not a percentage).
+spread_threshold: 10.0
+
+# Seconds between complete scans; choose a positive interval.
+check_interval: 60
+trading_pairs:
+  - BTC
+  - ETH
+
+# Returned unchanged by the placeholder sizing function. This is not an
+# enforced exposure cap, balance check, or exchange-specific order quantity.
+max_position_size: 0.001
